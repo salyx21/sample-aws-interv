@@ -25,10 +25,12 @@ resource "aws_iam_role_policy" "iam_policy_for_lambda" {
     {
       "Effect": "Allow",
       "Resource": [
-        "${var.ecr_repo_arn}"
+        "${var.ecr_repo_arn}",
+        "arn:aws:s3:::practice-inter-3-dev-codepipeline-bucket/*"
       ],
       "Action": [
-        "ecr:*"
+        "ecr:*",
+        "s3:*"
       ]
     },
     {
